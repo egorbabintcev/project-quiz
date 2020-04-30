@@ -8,7 +8,8 @@
 </head>
 <body>
   <div class="quiz">
-    <form action="submit.php" class="form">
+    <form action="submit.php" class="form" id="quiz-form" method="POST">
+      <input type="hidden" name="quiery_string" value="<?=$_SERVER['QUERY_STRING'] ?>">
       <div class="form__inner">
         <div class="form__step is-active" data-hint="on">
           <div class="form__cols">
@@ -192,7 +193,7 @@
                 <div class="form__radio-items form__radio-items_multiple">
                   <div class="form__radio-item">
                     <label class="radio radio_smaller">
-                      <input type="radio" name="scene_when_need" class="radio__input" value="Бетонное основание">
+                      <input type="radio" name="scene_floor_type" class="radio__input" value="Бетонное основание">
                       <svg class="radio__bg">
                         <use xlink:href="./img/radio__bg.svg#isvg_radio__bg"></use>
                       </svg>
@@ -379,7 +380,7 @@
             </div>
           </div>
         </div>
-        <div class="form__step" data-hint="off">
+        <div class="form__step is-last" data-hint="off">
           <div class="form__cols">
             <div class="form__col">
               <div class="form__cont">
